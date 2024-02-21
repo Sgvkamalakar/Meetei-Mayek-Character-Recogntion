@@ -16,12 +16,16 @@ Using a hybrid model, such as the combination of CNN and LSTM, can offer several
 
 ```bash
  pip install tensorflow numpy pandas matplotlib seaborn opencv-python tqdm
+```
 
 ## Model Architecture
 The hybrid model consists of a combination of CNN and LSTM layers. Here's a summary of the model architecture:
 
 ```python
+
 model = Sequential()
+
+# CNN part
 model.add(TimeDistributed(Conv2D(64,(3,3),activation='relu'),input_shape=(1,30,30,3)))
 model.add(TimeDistributed(MaxPooling2D(pool_size=(2,2))))
 model.add(TimeDistributed(Conv2D(64,(3,3),activation='relu')))
@@ -30,10 +34,10 @@ model.add(TimeDistributed(Conv2D(32,(3,3),activation='relu')))
 model.add(TimeDistributed(MaxPooling2D(pool_size=(2,2))))
 model.add(TimeDistributed(Flatten()))
 
+# LSTM part
 model.add(LSTM(100,return_sequences=False))
-
 model.add(Dense(56,activation='softmax'))
-
+```
 
 ## Results
 After training the model, you can evaluate its performance using various metrics such as accuracy, loss, and classification report.
