@@ -23,8 +23,11 @@ The workflow for using this repository is as follows:
 1. Clone the repository:
 
 ```bash
-git clone
+git clone https://github.com/Sgvkamalakar/Meetei_Mayek_Character_Recogntion
 ```
+2. Download the dataset
+3. Navigate to the model/Hybrid_Model_CNN_LSTM.ipynb
+4. Run all the cells
 
 ## Contributor:
 
